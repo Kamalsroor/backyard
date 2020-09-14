@@ -98,13 +98,6 @@
     </div>
 </div>
 <br>
-<div class="form-group">
-    {!! Form::label('video',trans('admin.video'),['class'=>'col-md-3 control-label']) !!}
-    <div class="col-md-9">
-        {!! Form::file('video',['class'=>'form-control','placeholder'=>trans('admin.video')]) !!}
-    </div>
-</div>
-<br>
 
 <div class="form-group col-md-12 col-lg-12">
 	{!! Form::label('video',trans('admin.video'),['class'=>'col-md-3 control-label']) !!}
