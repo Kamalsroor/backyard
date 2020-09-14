@@ -131,16 +131,22 @@
     </div>
 </div>
 <br>
-<div class="form-group">
-    {!! Form::label('video',trans('admin.video'),['class'=>'col-md-3 control-label']) !!}
-    <div class="col-md-9">
-        {!! Form::file('video',['class'=>'form-control','placeholder'=>trans('admin.video')]) !!}
-        @if(!empty($properties->video))
-        <img src="{{it()->url($properties->video)}}" style="width:150px;height:150px;" />
-        @endif
-    </div>
-</div>
+
+
+<div class="form-group col-md-12 col-lg-12">
+	{!! Form::label('video',trans('admin.video'),['class'=>'col-md-3 control-label']) !!}
+	<div class="col-md-9">
+		{!! Form::file('video',['class'=>'form-control','placeholder'=>trans('admin.video')]) !!}
+		@if(!empty($properties->video))
+		<video  width="320" height="240" controls >
+			<source src="{{it()->url($properties->video)}}" type="video/mp4" >
+			Your browser does not support the HTML5 video.
+		</video>
+		@endif
+	</div>
+</div> 
 <br>
+
 
 <div class="form-actions">
     <div class="row">

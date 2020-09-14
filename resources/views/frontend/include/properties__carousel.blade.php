@@ -4,7 +4,7 @@
 
             <div class="col-lg-4  col-12">
                 <div class="properties__content">
-                    <div class="properties__content__img">
+                    <div class="properties__content__img" data-video="{{it()->url($properties->video)}}">
                         <div class="layout"></div>
                         <img src="{{it()->url($Propertys->photo)}}">
                         <button class="rental">{{$Propertys->type}}</button>
