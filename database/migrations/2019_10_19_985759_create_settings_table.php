@@ -53,7 +53,7 @@ class CreateSettingsTable extends Migration
             $table->string('about_company_photo')->nullable();
             $table->string('cart_img')->nullable();
             $table->string('mail_img')->nullable();
-            
+
             $table->string('home_title')->nullable();
             $table->string('home_des')->nullable();
             $table->string('about_me_facebook')->nullable();
@@ -66,6 +66,15 @@ class CreateSettingsTable extends Migration
             $table->string('our_clients_img')->nullable();
             $table->string('courses_img')->nullable();
 
+
+            $table->longtext('our_service_des')->nullable();
+            $table->longtext('properties_des')->nullable();
+            $table->longtext('blog_des')->nullable();
+            $table->longtext('team_des')->nullable();
+            $table->longtext('opening_hours')->nullable();
+            $table->longtext('footer_des')->nullable();
+            $table->longtext('map')->nullable();
+            
 
 
             $table->enum('system_status', ['open', 'close'])->default('open');

@@ -1,51 +1,80 @@
 $(document).ready(function () {
-    function doSearch() {
-        var placeId = $(".propertiies.active").attr("data-placeId");
-
+    function doSearch(placeId) {
         var isRental = $(".rental").hasClass("active");
         var isSale = $(".sale").hasClass("active");
         var all = $(".alll").hasClass("active");
         var status = null;
 
         if (all) status = "all";
-        if (isRental) status = "rental";
-        else if (isSale) status = "sale";
-
-        var token = "{{Session::token()}}";
-        data = {
-            place_id: placeId,
-            status: status,
-            _token: token,
-        };
+        if (isRental) status = "Rental";
+        else if (isSale) status = "Sale";
 
         $.ajax({
-            url: "/search",
+            url: "/GetProperties",
             type: "GET",
-            data: data,
-            success: function success(res) {
-                const objectAr = Array.from(res);
-                console.log(objectAr.length);
-                var Row = "";
-                $(".propertyshow").html("");
-                $.each(res, function (index, value) {
-                    Row = "";
-
-                    // $('.propertyshow').append('Row');
-                });
+            dataType: "html",
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            data: {
+                place_id: placeId,
+                status: status,
+            },
+            success: function success(html) {
+                $(".sale-filter").html("");
+                $(".sale-filter").append(html);
             },
         });
     }
+    var placeId = $(".properties__button-place.active").data("place-id");
+    doSearch(placeId);
+    $(".properties__button-place").on("click", function () {
+        console.log("test");
+        var placeId = $(this).data("place-id");
 
-    $(".propertiies").on("click", function () {
-        doSearch();
+        doSearch(placeId);
     });
 
     $(".rental").on("click", function () {
-        doSearch();
+        var placeId = $(".properties__button-place.active").data("place-id");
+
+        doSearch(placeId);
     });
 
     $(".sale").on("click", function () {
-        doSearch();
+        var placeId = $(".properties__button-place.active").data("place-id");
+
+        doSearch(placeId);
+    });
+
+    $(document).on("click", ".a-link", function () {
+        event.preventDefault();
+        var url = $(this).data("url");
+        var isRental = $(".rental").hasClass("active");
+        var isSale = $(".sale").hasClass("active");
+        var all = $(".alll").hasClass("active");
+        var status = null;
+
+        if (all) status = "all";
+        if (isRental) status = "Rental";
+        else if (isSale) status = "Sale";
+
+        $.ajax({
+            url: url,
+            type: "GET",
+            dataType: "html",
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            data: {
+                place_id: placeId,
+                status: status,
+            },
+            success: function success(html) {
+                $(".sale-filter").html("");
+                $(".sale-filter").append(html);
+            },
+        });
     });
 
     // $(".rentalAndsale").on('click', function () {

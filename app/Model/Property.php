@@ -22,6 +22,7 @@ class Property extends Model
 		'wc',
 		'space',
 		'type',
+		'address',
 
 
 		'badge',

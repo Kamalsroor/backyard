@@ -21,12 +21,13 @@
         </div>
         <div class="col-lg-5 col-12 content">
             <h1 class="ourService__tittle"> our service</h1>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry' Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry'</p>
+            <p>{{ Str::limit(setting()->our_service_des , $limit = 200, $end = '...') }}</p>
                 <button class="visitUs"><a href="#contact">Visit Us</a></button>
         </div>
     </div>
 </div>
 </div>
 <!-- end our service  -->
+
+
+

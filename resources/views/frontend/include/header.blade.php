@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-5 phone">
-                    <p class="static-header__phone-num d-flex justify-content-end justify-content-lg-start"><a href="tel:01100075275"> <i class="fa fa-phone" aria-hidden="true"></i>+ 01100075275</a></p>
+                    <p class="static-header__phone-num d-flex justify-content-end justify-content-lg-start"><a href="tel:{{setting()->phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{setting()->phone}}</a></p>
                 </div>
             </div>
         </div>

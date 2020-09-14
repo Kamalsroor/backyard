@@ -4,7 +4,8 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Setting extends Model {
+class Setting extends Model
+{
 	protected $table    = 'settings';
 	protected $fillable = [
 		'sitename_ar',
@@ -37,7 +38,7 @@ class Setting extends Model {
 		'cart_img',
 
 
-		
+
 
 		'event_photo',
 		'about_video',
@@ -57,23 +58,24 @@ class Setting extends Model {
 		'about_me_youtube',
 		'about_company_photo',
 
-		
+
 		'register_img',
 		'experts_in_img',
 		'free_lessons_img',
 		'our_clients_img',
 		'courses_img',
 		'mail_img',
-		
-		
+
+
+
+		'our_service_des',
+		'properties_des',
+		'blog_des',
+		'team_des',
+		'opening_hours',
+		'footer_des',
+		'map',
 		
 		
 	];
-
 }
-
-
-
-
-
-

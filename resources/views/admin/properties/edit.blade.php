@@ -125,6 +125,13 @@
 </div>
 <br>
 <div class="form-group">
+    {!! Form::label('address',trans('admin.address'),['class'=>'col-md-3 control-label']) !!}
+    <div class="col-md-9">
+        {!! Form::text('address', $properties->address ,['class'=>'form-control','placeholder'=>trans('admin.address')]) !!}
+    </div>
+</div>
+<br>
+<div class="form-group">
     {!! Form::label('video',trans('admin.video'),['class'=>'col-md-3 control-label']) !!}
     <div class="col-md-9">
         {!! Form::file('video',['class'=>'form-control','placeholder'=>trans('admin.video')]) !!}

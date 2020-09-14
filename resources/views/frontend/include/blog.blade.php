@@ -2,7 +2,7 @@
 <div class="blog" id="blog_section">
     <div class="container">
         <h1>blog</h1>
-        <p class="summrize">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <p class="summrize">{{ Str::limit(setting()->blog_des , $limit = 200, $end = '...') }}</p>
         <div class="row blog__container">
             
         </div>
@@ -10,3 +10,4 @@
     </div>
 </div>
 <!-- end blog  -->
+

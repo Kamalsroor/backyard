@@ -23,6 +23,7 @@ class CreatePropertiesTable extends Migration
             $table->bigInteger('rooms')->nullable();
             $table->bigInteger('wc')->nullable();
             $table->string('space')->nullable();
+            $table->string('address')->nullable();
             $table->enum('type', ['Rental', 'Sale']);
             $table->bigInteger('place_id')->unsigned()->nullable();
             // $table->foreign('place_id')->references('id')->on('places');
@@ -31,7 +32,7 @@ class CreatePropertiesTable extends Migration
             $table->timestamps();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *

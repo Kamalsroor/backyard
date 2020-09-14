@@ -2,7 +2,7 @@
 <div class="team" id="testimonial"> 
     <div class="container">
         <h1>team</h1>
-        <p class="summrize">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <p class="summrize">{{ Str::limit(setting()->team_des , $limit = 200, $end = '...') }}</p>
         <div class="owl-carousel owl-theme owl-drag owl-loaded row" id="team__carousel">
             @foreach ($Team as $Team)
     

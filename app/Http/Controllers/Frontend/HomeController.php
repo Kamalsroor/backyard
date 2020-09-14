@@ -12,6 +12,8 @@ use App\Model\Service;
 use App\Model\Brand;
 use App\Model\Place;
 use App\Model\Team;
+use App\Model\Property;
+use App\Model\Blog;
 
 use Mail;
 
@@ -25,11 +27,27 @@ class HomeController extends Controller
         $Brand = Brand::all();
         $Place = Place::all();
         $Team = Team::all();
+        $Property = Property::orderBy('id', 'desc')->take(3)->get();
+        return view('frontend.home', ['title' => trans('frontend.Home'),'Property' => $Property , 'Abouts' => $Abouts, 'Service' => $Service, 'Brand' => $Brand, 'Place' => $Place, 'Team' => $Team]);
+    }
 
 
+    public function PropertiesView(Request $request)
+    {
 
 
-        return view('frontend.home', ['title' => trans('frontend.Home'), 'Abouts' => $Abouts, 'Service' => $Service, 'Brand' => $Brand, 'Place' => $Place, 'Team' => $Team]);
+        $Property = Property::where('type', $request->status)->where('place_id', $request->place_id)->paginate(6);
+        return view('frontend.include.properties__carousel', ['title' => trans('frontend.product-list'), 'Property' => $Property]);
+    }
+
+
+    public function JsonBlogs(Request $request)
+    {
+        $Blogs = Blog::get();
+        foreach ($Blogs as $Blog) {
+            $Blog->photo = it()->url($Blog->photo);
+        }
+        return $Blogs;
     }
 
 
@@ -77,15 +95,6 @@ class HomeController extends Controller
     }
 
 
-
-    public function ProductView($id)
-    {
-        $Product = Product::find($id);
-        // $RelatedProduct = Product::whereNot('id' , $id)->get(3);
-
-        $RelatedProducts =  Product::where('id', '!=', $id)->inRandomOrder()->limit(5)->get(); // The amount of items you wish to receive
-        return view('frontend.product', ['title' => trans('frontend.product'), 'Product' => $Product, 'RelatedProducts' => $RelatedProducts]);
-    }
 
     function getUserIP()
     {

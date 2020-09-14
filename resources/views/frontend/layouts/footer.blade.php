@@ -9,15 +9,15 @@
                 <div class="row">
                     <div class="col-md-5 col-12">
                         <div class="footer__summrize">
-                            <h4>The Back Yard Co.</h4>
-                            <p class="pragraph">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry' Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'</p>
+                            <h4>{{setting()->sitename_en}}</h4>
+                            <p class="pragraph">{{setting()->footer_des}}</p>
                             <div class="socialLinks">
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> 
-                                <a href="https://instgram.com"> <i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linekin.com"> <i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> 
-                                <a href="https://instgram.com"> <i class="fab fa-instagram"></i></a>
-                                <a href="https://www.linekin.com"> <i class="fab fa-linkedin-in"></i></a> 
+                                <a href="{{setting()->facebook}}"><i class="fab fa-facebook-f"></i></a> 
+                                <a href="{{setting()->instagram}}"> <i class="fab fa-instagram"></i></a>
+                                <a href="{{setting()->linkedin}}"> <i class="fab fa-linkedin-in"></i></a>
+                                {{-- <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>  --}}
+                                {{-- <a href="https://instgram.com"> <i class="fab fa-instagram"></i></a> --}}
+                                {{-- <a href="https://www.linekin.com"> <i class="fab fa-linkedin-in"></i></a>  --}}
                             </div>
                         </div>
                     </div>
@@ -43,60 +43,28 @@
                     </div>
                     <div class="col-md-4">
                             <h4>Recent Properties</h4>
-                        <div class="recent-properties">
-                            <div class="row">
-                                <div class="col-lg-4 col-6">
-                                    <div class="recent-properties__img">
-                                        <img src="imgs/home-525x328.png">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-6">
-                                    <div class="recent-properties__content">
-                                        <p>Lorem Ipsum</p>
-                                        <div class="recent-properties__content__img">
-                                            <i class="far fa-clone"></i>
+                
+                        @foreach ($Property as $Propertys)
+                            
+                            <div class="recent-properties">
+                                <div class="row">
+                                    <div class="col-lg-4 col-6">
+                                        <div class="recent-properties__img">
+                                            <img src="{{it()->url($Propertys->photo)}}">
                                         </div>
-                                        <p>120 m2</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="recent-properties">
-                            <div class="row">
-                                <div class="col-lg-4 col-6">
-                                    <div class="recent-properties__img">
-                                        <img src="imgs/home-525x328.png">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-6">
-                                    <div class="recent-properties__content">
-                                        <p>Lorem Ipsum</p>
-                                        <div class="recent-properties__content__img">
-                                            <i class="far fa-clone"></i>
+                                    <div class="col-lg-8 col-6">
+                                        <div class="recent-properties__content">
+                                            <p>{{$Propertys->name}}</p>
+                                            <div class="recent-properties__content__img">
+                                                <i class="far fa-clone"></i>
+                                            </div>
+                                            <p>{{$Propertys->space}} m2</p>
                                         </div>
-                                        <p>120 m2</p>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="recent-properties">
-                            <div class="row">
-                                <div class="col-lg-4 col-6">
-                                    <div class="recent-properties__img">
-                                        <img src="imgs/home-525x328.png">
-                                    </div>
-                                </div>
-                                <div class="col-lg-8 col-6">
-                                    <div class="recent-properties__content">
-                                        <p>Lorem Ipsum</p>
-                                        <div class="recent-properties__content__img">
-                                            <i class="far fa-clone"></i>
-                                        </div>
-                                        <p>120 m2</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                    
+                            </div>                    
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -177,6 +145,9 @@
     <script src="{{url('frontend')}}/js/vendor/jquery.validate.js"></script>
     <script src="{{url('frontend')}}/js/vendor/jquery.nicescroll.min.js"></script>
     <script src="{{url('frontend')}}/js/pages/main.js"></script>
+    <script src="{{url('frontend')}}/js/properties/properties.js"></script>
+
+    
     <!-- Start scripts -->
    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

@@ -50,11 +50,17 @@ class Settings extends Controller
 			'phone' => '',
 			'whats_number' => '',
 			'discover_me_titel' => '',
-			'discover_me_des' => '',
 			'discover_me_video' => '',
 			'discover_me_photo' => '',
-			'home_title' => 'max:150',
-			'home_des' => 'sometimes|nullable|max:150',
+			'discover_me_des' => 'sometimes|nullable',
+			'home_title' => 'sometimes|nullable|max:150',
+			'our_service_des' => 'sometimes|nullable',
+			'properties_des' => 'sometimes|nullable',
+			'home_des' => 'sometimes|nullable',
+			'blog_des' => 'sometimes|nullable',
+			'team_des' => 'sometimes|nullable',
+			'footer_des' => 'sometimes|nullable',
+			'map' => 'sometimes|nullable|max:600',
 			'trainees' => '',
 			'lectures' => '',
 			'events' => '',
@@ -80,7 +86,7 @@ class Settings extends Controller
 			'about_me_photo' => 'sometimes|nullable|' . it()->image(),
 			'about_company_photo' => 'sometimes|nullable|' . it()->image(),
 			'about_info' => '',
-			'about_education' => '',
+			'opening_hours' => '',
 			'about_company' => '',
 			'register_img' => 'sometimes|nullable|' . it()->image(),
 			'experts_in_img' => 'sometimes|nullable|' . it()->image(),
@@ -153,9 +159,11 @@ class Settings extends Controller
 		if (request()->hasFile('courses_img')) {
 			$data['courses_img'] = it()->upload('courses_img', 'setting');
 		}
-		if (request()->hasFile('about_education')) {
-			$data['about_education'] = json_encode($data['about_education']);
+		if (request()->hasFile('opening_hours')) {
+			$data['opening_hours'] = json_encode($data['opening_hours']);
 		}
+
+		
 
 		Setting::orderBy('id', 'desc')->update($data);
 		session()->flash('success', trans('admin.updated'));
