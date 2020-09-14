@@ -252,25 +252,28 @@ $(window).ready(function () {
             method: "get",
             url: "/GetBlogs",
             success: function (data) {
-                for (let i = controlItems - 3; i < controlItems; i++) {
-                    if (data.length != i) {
-                        var element = `<div class="col-md-4 col-12">
-                                        <div class="blog__content">
-                                            <div class="blog__img">
-                                                <img src="${data[i].photo}">
-                                            </div>
-                                            <h4 class="blog__tittle">${data[i].title}</h4>
-                                            <p class="blog__artical">${data[i].des}</p>
-                                            <button type="button" class="btn btn-primary more-blog" data-toggle="modal" data-target="#exampleModal" data-src="${data[i].photo}"> 
-                                                    Continue Reading ..
-                                            </button>
-                                        </div>
-                                    </div>`;
+                if(data.length > 0){
 
-                        $(".blog__container").append(element);
-                    } else {
-                        loadBtn.addClass("opacity");
-                    }
+                    for (let i = controlItems - 3; i < controlItems; i++) {
+                        if (data.length != i) {
+                            var element = `<div class="col-md-4 col-12">
+                            <div class="blog__content">
+                            <div class="blog__img">
+                            <img src="${data[i].photo}">
+                            </div>
+                            <h4 class="blog__tittle">${data[i].title}</h4>
+                            <p class="blog__artical">${data[i].des}</p>
+                            <button type="button" class="btn btn-primary more-blog" data-toggle="modal" data-target="#exampleModal" data-src="${data[i].photo}"> 
+                            Continue Reading ..
+                            </button>
+                            </div>
+                            </div>`;
+                            
+                            $(".blog__container").append(element);
+                        } else {
+                            loadBtn.addClass("opacity");
+                        }
+                }
                 }
                 controlItems += 3;
             },
