@@ -1,0 +1,71 @@
+.fixed-form{
+    position: fixed !important;
+    top:120px !important;
+}
+.header{
+    position: fixed !important;
+    width: 100%;
+    z-index: 2;
+    background: #fff;
+    top:0;
+    #{$end}: 0;
+    #{$start}: 0;
+    box-shadow: 0 3px 16px 0 rgba(0,0,0,.1);
+    background: rgba(255,255,255,.96);
+    
+}
+.socialLinks{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    a{
+        color: $main-color;
+        transition: 0.3s ease-in-out;
+        &:hover{
+            color: #0D1333;
+        }
+    }
+}
+.fixed{
+    position: fixed !important;
+}
+.properties{
+    .sale-falter__button{
+button.active{
+            border:none;
+            background-color: $main-color;
+        }
+    }
+}
+header{
+    .sticky-header{
+        .menu-name{
+            li.menu__list.active{
+                &::before{
+                    content: '';
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+.properties{
+    .filter-place{
+        .active{
+            .elpsis{
+                color: #fff !important;
+            }
+            background-color: #0D1333 !important;
+            color: #fff !important;
+            #triangle-right{
+                border-left: 30px solid $main-color !important;
+                @include tablet{
+                    border-top: 20px solid transparent !important;
+                    border-bottom: 20px solid transparent !important;
+                    border-left: 40px solid #A46B04 !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+.buttons{
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    display: flex;
+    z-index: 3;
+    .general-to-up {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+        justify-content: center;
+        background: #404040;
+        svg{
+            width: 21px;
+            color: #fff;
+            font-size: 30px;
+            @include mobile{
+                width: 12px;
+            }
+        }
+        &:hover {
+            opacity: .8;
+        }
+        @include mobileTablet{
+            width: 50px;
+            height: 50px;
+            img{
+                width: 17px;
+            }
+        }
+        @include mobile{
+            width: 20px;
+            height: 20px;
+            right: 10px;
+        }
+    }
+    .buttom-form{
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        background: #404040;
+
+        svg{
+            width: 21px;
+            color: #fff;
+            font-size: 30px;
+            @include mobile{
+                width: 14px;
+            }
+        }
+        &:hover {
+            opacity: .8;
+        }
+        @include mobileTablet{
+            width: 50px;
+            height: 50px;
+            right: 100px;
+        }
+        @include mobile{
+            width: 20px;
+            height: 20px;
+            right: 10px;
+            bottom: 35px;
+        }
+    }
+}
+
+
+
+.preload {
+    width:100%;
+    height:100%;
+    background:#fff;
+    position: fixed;
+    top:0;
+    #{$start}:0;
+    #{$end}:0;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5555;
+
+    .preloader {
+        display: block;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid transparent;
+        border-top-color: $main-color;
+        position: relative;
+        animation: rotating 2.5s infinite ease;
+        -webkit-animation: rotating 2.5s infinite linear;
+        &:after, &:before {
+            content: "";
+            position: absolute;
+            border-radius: inherit;
+            border: inherit;
+        }
+        &:after {
+            top: 5px;
+            left: 5px;
+            width: 180px;
+            height: 180px;
+            border-top-color: #0D1333;
+            animation: rotating 2s infinite ease;
+            -webkit-animation: rotating 2s infinite linear;
+        }
+        &:before {
+            top: 15px;
+            left: 15px;
+            width: 160px;
+            height: 160px;
+            border-top-color: $main-color;
+            animation: rotating 1.5s infinite ease;
+            -webkit-animation: rotating 1.5s infinite linear;
+        }
+    }
+    @keyframes rotating {
+        0% {transform: rotate(0deg)}
+        100% {transform: rotate(360deg)}
+    }
+
+}
+
+

@@ -1,0 +1,17 @@
+p{
+    color: #707070;
+    font-size: 15px;
+}
+h1{
+    color: #0D1333;
+    text-transform: capitalize;
+    font-weight: bold;
+    margin-bottom: 28px;
+    @include mobileTablet{
+        font-size: 40px !important;
+    }
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}

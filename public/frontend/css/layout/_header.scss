@@ -1,0 +1,178 @@
+//  strat header style
+.sticky-header {
+    position: relative;
+    background-color: $sec-color;
+    transition: 0.8s;
+    z-index:1;
+    .sticky-header__img-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .img{
+            width: 70px;
+            height: 70px;
+        }
+        .sticky-header__tittle{
+            font-size: 22px;
+            color: $content;
+            font-weight: bold;
+            font-family: serif;
+            padding: 7px 0px 7px 0px;
+            margin: 0;
+            span{
+                font-size: 22px;
+                color: $main-color;
+                width: 100%;
+                display: inline-block;
+                font-weight: bold;
+                font-family: serif;
+            }
+        }
+    }
+    .menu-name{
+        text-align: $end;
+        .menu{
+            white-space: wrap;
+            ul{
+                li.menu__list{
+                    display: inline-block;
+                    text-transform: capitalize;
+                    margin-#{$end}: 27px;
+                    position: relative;
+                    transition: 0.3s;
+                    a.menu__link{
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: $content;
+                        font-family: serif;
+                        // margin-bottom: 9px;
+                        display: inline-block;
+                    }
+                    &::before{
+                        content: '';
+                        width: 0;
+                        display: block;
+                        height: 2px;
+                        background: $main-color;
+                        transition: width 0.3s;
+                        position: absolute;
+                        bottom: 0;
+                    }
+                    &:hover::before{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .mobile-menu{
+            .mobile-menu__button{
+                display: flex;
+                justify-content: $start;
+                flex-direction: column;
+                span{
+                    width: 25px;
+                    height: 2px;
+                    margin: 3px 0;
+                    display: inline-block;
+                    background-color: $content;
+                }
+            }
+        }
+    }
+    .static-header__phone-num{
+        color: $content;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 0;
+        svg{
+            color: $main-color;
+            font-size: 13px;
+            display: inline-block;
+            transform: rotate(100deg)scale(1.5);
+            margin-right: 7px;
+        }
+        a{
+            color: $content;
+        }
+    }
+}
+@include mobileTablet{
+    .sticky-header{
+        position: relative;
+        .sticky-header__logo{
+            padding: 0;
+            order:2;
+            display: flex;
+    justify-content: flex-end;
+        }
+        .sticky-header__img-title{
+            padding: 0;
+            .sticky-header__tittle{
+                font-size: 14px;
+                padding: 10px 0px 5px 0px;
+                span{
+                    font-size: 15px;
+                    padding: 10px 0px 5px 0px;
+                }
+            }
+        }
+        .menu-name{
+            order:1;
+            position: static;
+            display: flex;
+            justify-content: flex-end;
+            .mobile-menu{
+                width: 100%;
+                display: flex !important;
+                justify-content: center;
+                position: unset;
+                .mobile-menu__dropdown{
+                    position: absolute;
+                    z-index: 1;
+                    width: 95%;
+                    left: 0px;
+                    background: rgb(255, 255, 255);
+                    margin: auto;
+                    top: 83px;
+                    right: 0;
+                    ul{
+                        margin-left: 20px;
+                        text-align: left;
+                        li{
+                            a{
+                                font-size: 14px;
+                                font-weight: 400;
+                                color: #000;
+                                text-transform: capitalize;
+                                padding: 5px 10px;
+                                margin: 2px 5px;
+                                display: flex;
+                                justify-content: space-between;
+                                transition: 0.3s;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .mobile-menu__button{
+                span{
+                    width: 25px;
+                    height: 2px;
+                }
+            }
+        }
+        .phone{
+            order:3;
+            padding: 0;
+            text-align: right;
+            .static-header__phone-num{
+                font-size: 13px;
+                padding: 0;
+                svg{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

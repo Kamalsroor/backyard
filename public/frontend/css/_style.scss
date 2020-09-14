@@ -1,0 +1,46 @@
+/*====================
+    Start abstract files
+====================*/
+@import'abstract/variable';
+@import 'abstract/mixcin';
+@import'abstract/placeholder';
+/*====================
+    End Pages files
+====================*/
+
+/*====================
+    Start base of files
+====================*/
+@import 'base/typography';
+@import 'base/base';
+@import 'base/reset';
+/*====================
+    End base of files
+====================*/
+
+
+/*====================
+Start componant Of Pages
+====================*/
+@import 'componants/button';
+
+/*====================
+End componant Of Pages
+====================*/
+
+/*Start Layout Of Pages
+====================*/
+@import 'layout/header';
+@import 'layout/footer';
+/*====================
+    End Layout Of Pages
+====================*/
+
+
+/*====================
+    Start Pages files
+====================*/
+@import 'pages/home';
+/*====================
+    End Pages files
+====================*/
