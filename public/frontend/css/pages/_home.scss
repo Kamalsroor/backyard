@@ -1,8 +1,7 @@
 .slider{
-    background-image: url("../imgs/pexels-photo.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +20,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 45px;
-        @include mobile{
-            padding-left: 0px;
-        }
         p{
             font-size: 49px;
             color: #C4C4CE;
@@ -114,43 +109,14 @@
             margin-bottom: 20px;
             font-weight: bold;
         }
-        input{
-            width: 160px;
-            height: 38px;
-            color: $content;
-            font-size: 15px;
-            padding-left: 14px;
-            margin-bottom: 3px;
-            font-weight: bold;
-            border: 1px solid $border-form;
-            opacity: 0.8;
-        }
-        .phone{
-            @include mobile{
-                margin-left: 0px !important;
-            }
-        }
-        input#email,textarea#text{
-            width: 325px;
-            font-size: 15px;
-            padding-left: 14px;
-        }
-        textarea#text{
-            height: 110px;
-            padding: 12px 0px 0px 14px;
-            border: 1px solid #707070;
-            outline: none;
-            opacity: 0.8;
-        }
+
         label{
             display: flex;
             color: $border-form;
-            opacity: 0.9;
             font-size: 16px;
             input{
                 width: 40px;
                 height: 19px;
-                margin: 0;
                 margin-right: 11px;
                 color: $border-form;
             }
@@ -200,14 +166,14 @@
         .form__closing{
             cursor: pointer;
             span{
-                display: inline-block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 width: 25px;
                 height: 25px;
                 position: absolute;
                 top: 10px;
                 right: 10px;
-                text-align: center;
-                line-height: 1.7;
                 background-color: $sec-color;
                 svg{
                     color: $main-color;
@@ -252,46 +218,8 @@
         }
     }
 }
-@include mobileTablet{
-    .form , .fixed-form{
-        right: 0;
-        width: 100%;
-        margin: auto;
-        padding: 0;
-        left: 0;
-        font-size: 13px;
-        .form__content{
-            padding: 25px 20px 0px 20px;
-            form{
-                input{
-                    width: 100%;
-                }
-                .resize{
-                    width: auto;
-                }
-                textarea{
-                    width: 100%;
-                    height: auto;
-                }
-            }
-            .container{
-                font-size: 13px;
-            }
-            .btn-submit{
-                input{
-                    width: 100%;
-                    font-size: 13px;
-                }
-            }
-        }
-    }
-}
-.error{
-    display: none;
-    margin-bottom: 10px !important;
-    font-weight: 100 !important;
-    color: red !important;
-}
+
+
 // about us 
 .aboutUs,.properties{
     margin-top: 157px;

@@ -3,28 +3,30 @@
     <div class="sticky-header">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-lg-3  col-6 sticky-header__logo">
+                <div class="col-lg-2 col-xl-3 col-5 sticky-header__logo">
                     <div class="sticky-header__img-title">
-                        <div class="img"><img src="{{it()->url(setting()->logo)}}"></div>
-                        <p class="sticky-header__tittle">
-                            @php
-                             $sitename_en = explode(" ",setting()->sitename_en);
-                            @endphp
-                            <span>{{$sitename_en[0]}}</span>
-                            @php
-                                unset($sitename_en[0]);
-                            @endphp
-                            @foreach ($sitename_en as $name)
-                                {{$name}} 
-                            @endforeach
-                        </p>
+                        <a href="#" class="d-flex align-items-center justify-content-center">
+                            <div class="img d-flex align-items-center">
+                                <img src="{{it()->url(setting()->logo)}}">
+                            </div>
+                            <p class="sticky-header__tittle">
+                                @php
+                                $sitename_en = explode(" ",setting()->sitename_en);
+                                @endphp
+                                <span>{{$sitename_en[0]}}</span>
+                                @php
+                                    unset($sitename_en[0]);
+                                @endphp
+                                @foreach ($sitename_en as $name)
+                                    {{$name}} 
+                                @endforeach
+                            </p>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-2 menu-name">
+                <div class="col-lg-8 col-xl-7 col-2 menu-name">
                     <div class="menu d-lg-block d-none">
-                        <ul>
-                            
-                            
+                        <ul class="d-flex justify-content-lg-center">
                             <li class="menu__list active"><a href="#" class="menu__link active">home</a></li>
                             <li class="menu__list"><a href="#aboutUs" class="menu__link">about</a></li>
                             <li class="menu__list"><a href="#ourServices" class="menu__link">service</a></li>
@@ -54,8 +56,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-4 phone">
-                    <p class="static-header__phone-num"><a href="tel:01100075275"> <i class="fa fa-phone" aria-hidden="true"></i>+ 01100075275</a></p>
+                <div class="col-lg-2 col-5 phone">
+                    <p class="static-header__phone-num d-flex justify-content-end justify-content-lg-start"><a href="tel:01100075275"> <i class="fa fa-phone" aria-hidden="true"></i>+ 01100075275</a></p>
                 </div>
             </div>
         </div>

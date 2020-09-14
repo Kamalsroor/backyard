@@ -3,14 +3,19 @@
     position: relative;
     background-color: $sec-color;
     transition: 0.8s;
-    z-index:1;
+    z-index: 8;
     .sticky-header__img-title{
         display: flex;
         justify-content: center;
         align-items: center;
         .img{
+            @include mobileTablet {
+                width: 60px;
+                height: 60px;
+            }
             width: 70px;
             height: 70px;
+            padding: 5px;
         }
         .sticky-header__tittle{
             font-size: 22px;
@@ -26,6 +31,7 @@
                 display: inline-block;
                 font-weight: bold;
                 font-family: serif;
+                text-transform: capitalize;
             }
         }
     }
@@ -56,7 +62,7 @@
                         background: $main-color;
                         transition: width 0.3s;
                         position: absolute;
-                        bottom: 0;
+                        bottom: -7px;
                     }
                     &:hover::before{
                         width: 100%;
@@ -92,7 +98,14 @@
             margin-right: 7px;
         }
         a{
+            padding-right: 15px;
             color: $content;
+            transition: .5s;
+            white-space: nowrap;
+            &:hover {
+                color: $main-color;
+                transition: .5s;
+            }
         }
     }
 }
@@ -112,7 +125,7 @@
                 padding: 10px 0px 5px 0px;
                 span{
                     font-size: 15px;
-                    padding: 10px 0px 5px 0px;
+                    padding: 5px 0px 5px 0px;
                 }
             }
         }
@@ -124,16 +137,15 @@
             .mobile-menu{
                 width: 100%;
                 display: flex !important;
-                justify-content: center;
                 position: unset;
                 .mobile-menu__dropdown{
                     position: absolute;
                     z-index: 1;
-                    width: 95%;
+                    width: 100%;
                     left: 0px;
                     background: rgb(255, 255, 255);
                     margin: auto;
-                    top: 83px;
+                    top: 60px;
                     right: 0;
                     ul{
                         margin-left: 20px;

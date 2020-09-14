@@ -154,6 +154,20 @@
         </section>
     </div>
     <!-- End Preloading Of Page -->
+
+    <div class="buttons">
+        <!--start button for form  -->
+        <div class="buttom-form d-none">
+            <i class="far fa-envelope-open"></i>
+        </div>
+        <!-- end button for form  -->
+        <!-- Start to Up button -->
+        <div class="general-to-up ">
+            <i class="fas fa-angle-up"></i>
+        </div>
+        <!-- End to Up button -->
+    </div>
+
   
     <script src="{{url('frontend')}}/js/vendor/jquery-3.3.1.min.js"></script>
     <script src="{{url('frontend')}}/js/vendor/popper.min.js"></script>
