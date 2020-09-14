@@ -1,5 +1,5 @@
 <!-- start location  -->
-<div class="location" id="contact">
+<div data-related="contact" class="location" id="contact">
     <div class="location__map-img">
         <iframe src="{{setting()->map}}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         <!-- <img src="imgs/Capture.png"> -->

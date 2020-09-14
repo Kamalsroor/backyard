@@ -136,7 +136,7 @@
         <!-- End to Up button -->
     </div>
 
-  
+
     <script src="{{url('frontend')}}/js/vendor/jquery-3.3.1.min.js"></script>
     <script src="{{url('frontend')}}/js/vendor/popper.min.js"></script>
     <script src="{{url('frontend')}}/js/vendor/all.min.js"></script>

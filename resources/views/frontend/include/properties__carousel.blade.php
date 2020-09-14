@@ -1,4 +1,4 @@
-   <div class="owl-carousel owl-theme owl-drag owl-loaded row properties__carousel">
+   <div data-related="properties" class="owl-carousel owl-theme owl-drag owl-loaded row properties__carousel">
         @foreach ($Property as $Propertys)
         
 

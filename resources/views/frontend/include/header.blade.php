@@ -10,6 +10,7 @@
                                 <img src="{{it()->url(setting()->logo)}}">
                             </div>
                             <p class="sticky-header__tittle">
+                            The
                                 @php
                                 $sitename_en = explode(" ",setting()->sitename_en);
                                 @endphp
@@ -27,13 +28,27 @@
                 <div class="col-lg-8 col-xl-7 col-2 menu-name">
                     <div class="menu d-lg-block d-none">
                         <ul class="d-flex justify-content-lg-center">
-                            <li class="menu__list active"><a href="#" class="menu__link active">home</a></li>
-                            <li class="menu__list"><a href="#aboutUs" class="menu__link">about</a></li>
-                            <li class="menu__list"><a href="#ourServices" class="menu__link">service</a></li>
-                            <li class="menu__list"><a href="#prop" class="menu__link">properties</a></li>
-                            <li class="menu__list"><a href="#blog_section" class="menu__link">blogs</a></li>
-                            <li class="menu__list"><a href="#testimonial" class="menu__link">testmonial</a></li>
-                            <li class="menu__list"><a href="#contact" class="menu__link">contact</a></li>
+                            <li class="menu__list active">
+                                <a href="#" data-target="home" class="menu__link active">home</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="about" class="menu__link">about</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="service" class="menu__link">service</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="properties" class="menu__link">properties</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="blogs" class="menu__link">blogs</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="team" class="menu__link">team</a>
+                            </li>
+                            <li class="menu__list">
+                                <a href="#" data-target="contact" class="menu__link">contact</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="mobile-menu d-flex d-lg-none">

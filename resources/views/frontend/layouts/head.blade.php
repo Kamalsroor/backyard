@@ -35,11 +35,6 @@
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <!-- END CORE PLUGINS -->
-      <style>
-          .error{
-              display: none;
-          }
-      </style>
     </head>
     <!-- END HEAD -->
     <body >

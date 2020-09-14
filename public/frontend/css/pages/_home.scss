@@ -36,6 +36,11 @@
         transition: 0.5s ease-in-out;
         position: relative;
         z-index: 0 !important;
+
+        
+        font-size: 23px;
+        font-weight: bold;
+        
         &::after{
             content: '';
             display:block;
@@ -52,7 +57,11 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: $sec-colorForContent;
         }
         &:hover{
             &::after{
@@ -60,18 +69,14 @@
                 transition: 0.5s;
             }
         }
-        @include mobileTablet{
-            width: 180px;
-            border-radius: 22px
-        }
-        a{
-            color: $sec-colorForContent;
-            font-size: 23px;
-            font-weight: bold;
-            @include mobileTablet{
-                font-size: 17px;
-            }
-        }
+        // a{
+        //     color: $sec-colorForContent;
+        //     font-size: 23px;
+        //     font-weight: bold;
+        //     @include mobileTablet{
+        //         font-size: 17px;
+        //     }
+        // }
 
     }
 }
@@ -79,41 +84,83 @@
 // start form 
 .form{
     position: absolute;
-    width: 450px;
-    background: #fff;
+    width: 430px;
     top: 35px;
     right: 70px;
-    box-shadow: 0px 15px 15px #00000029;
     transition: 0.5s;
     z-index: 2;
+    @include mobileTablet {
+        width: 95%;
+        right: 2.5%;
+    }
     &:hover{
         .calling-button{
-            left:13px !important;
+            left:-30px !important;
+        }
+    }
+    &.fixed-form {
+        .calling-button {
+            display: none;
         }
     }
     .form__content{
-        // height: 100%;
-        padding-top: 30px;
+        
         padding: 22px 55px 0px 61px;
-        box-shadow: 0px 15px 15px #00000029;
+        // box-shadow: 0px 0 3px #00000029;
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,.08);
         position: relative;
         background-color: #fff;
+        @include mobileTablet {
+            padding: 15px 15px;
+        }
         h1{
             color: #000000;
-            font-size: 28px;
+            font-size: 22px;
             margin-bottom: 10px;
+            @include mobileTablet{
+                font-size: 22px !important;
+            }
         }
         p{
             color: $form-content;
-            font-size: 17px;
+            font-size: 16px;
             margin-bottom: 20px;
             font-weight: bold;
         }
-
+        .error {
+            font-size: 12px;
+            padding-top: 3px;
+            color: red;
+        }
+        input, textarea {
+            border-radius: 0;
+            border: 1px solid #AAAABA;
+            display: block;
+            width: 100%;
+            outline: none;
+            height: calc(2.25rem + 2px);
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #AAAABA;
+            background-color: #fff;
+            &::placeholder {
+                color: #AAAABA;
+                font-family: 'sitka';
+                font-size: .8rem;
+            }
+        }
+        textarea {
+            height: 110px;
+            resize: none;
+            margin-bottom: 10px;
+        }
         label{
             display: flex;
             color: $border-form;
             font-size: 16px;
+            color: #707070;
             input{
                 width: 40px;
                 height: 19px;
@@ -181,38 +228,32 @@
             }
         }
         .calling-button{
-            width: 70px;
-            height: 55px;
             position: absolute;
             top: 30px;
-            left: 0;
-            transform: rotate(90deg);
+            left: -40px;
             transition: 0.3s;
             span{
                 background: $main-color;
-                display: inline-block;
-                height: 60px;
-                margin-left: 20px;
-                margin-top: 55px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 56px;
+                width: 50px;
                 position: relative;
-                width: 58px;
-                text-align: center;
+                z-index: 2;
+                font-size: 2rem;
+                color: #000000;
+                padding: 0 .3rem;
                 &:before{
                     content: "";
                     position: absolute;
-                    width: 41px;
-                    height: 41px;
+                    width: 40px;
+                    height: 40px;
                     background-color: #A46B04;
-                    left: 8px;
-                    top: -21px;
+                    right: -20px;
+                    top: 8px;
                     transform: rotate(45deg);
-                }
-                .phone-form{
-                    transform: rotate(-120deg) !important;
-                    width: 28px;
-                    padding-top: 0px;
-                    margin-top: 8px;
-                    font-size: 37px;
+                    z-index: -1;
                 }
             }
         }
@@ -221,7 +262,7 @@
 
 
 // about us 
-.aboutUs,.properties{
+.aboutUs, .properties {
     margin-top: 157px;
     background-image: url("../imgs/home-body-bg.d653e24c.png");
     background-size: cover;
@@ -233,6 +274,15 @@
         margin-top: 60px;
     }
     .carts__info{
+        .img {
+            width: 100%;
+            img {
+                height: 350px;
+                @include mobileTablet {
+                    height: 160px;
+                }
+            }
+        }
         @include mobile{
             display: inline-block !important;
         }
@@ -253,10 +303,7 @@
         @include mobileTablet{
             font-size: 14px;
             width: auto;
-            margin: 0px 50px 25px;
-        }
-        @include mobile{
-            font-size: 10px;
+            margin: 0px 15px 25px 50px;
         }
     }
     .owl-item{
@@ -280,7 +327,7 @@
                 background: #fff;
                 right: 0;
                 left: 180px;
-                box-shadow: 0px 15px 15px #00000029;
+                box-shadow: 0px 0 3px #00000029;
                 padding-top: 50px;
                 padding-bottom: 50px;
                 padding-left: 45px;
@@ -306,16 +353,17 @@
                     display: inline-block !important;
                     width: 100%;
                     left: 10px;
-                    padding-right: 0px;
-                    padding-left: 6px;
-                    padding-top: 6px;
-                    padding-bottom: 6px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
                 }
                 h4{
                     color: #A46B04;
-                    font-size: 42px;
+                    font-size: 35px;
                     font-weight: bold;
                     margin-bottom: 28px;
+                    text-transform: capitalize;
                     @include lapTop{
                         margin-bottom: 10px;
                     }
@@ -323,29 +371,20 @@
                         font-size: 20px;
                         margin-bottom: 15px;
                     }
-                    @include mobile{
-                        margin-bottom: 4px;;
-                    }
                 }
                 p{
                     margin: 0;
-                    @include lapTop{
-                        padding-bottom: 35px;
-                    }
                     @include mobileTablet{
-                        padding-bottom: 10px;
                         font-size: 10px;
                     }
-                    @include mobile{
-                        font-size: 8px;;
-                    }
+                    
                 }
                 &:hover{
                     bottom: -50px;
                     background-color: #0D1333;
-                @include mobile{
-                    bottom: 20px;
-                }
+                    @include mobile{
+                        bottom: 20px;
+                    }
                     p{
                         color: #fff;
                     }
@@ -417,7 +456,7 @@
     }
     
     h1{
-        margin: 3px;
+        margin: 3px 0;
     }
     .content{
         @include mobileTablet{
@@ -473,21 +512,12 @@
         justify-content: center;
         align-items: center;
         width: 280px;
-        padding: 40px 42px 0px 42px;
+        padding: 2rem 1rem 2rem 1rem;
         border-bottom: 5px solid #D6AC3C;
-        @include lapTop{
-            width: 100%;
-        }
-        @include mobile{
-            padding: 15px;
-            width: 100%;
-        }
+        width: 100%;
         svg{
             width: 55px;
             height: 42px;
-            @include mobile{
-                width: 25px;
-            }
         }
         h4{
             font-size: 21px;
@@ -496,42 +526,28 @@
             margin-bottom: 24px;
             width: 145px;
             text-align: center;
-            @include mobile{
-                margin-top: 20px;
-                font-size: 10px;
-                margin-bottom: 15px;
-            }
         }
         p{
             width: 210px;
             text-align: center;
             margin-bottom: 31px;
+            word-break: break-all;
             @include mobile{
                 width: 100%;
-                font-size: 10px;
             }
         }
-        button.ourService__call{
+        a.ourService__call{
             width: 108px;
             height: 43px;
             background: #0D1333;
             color: #fff;
-            margin-bottom: 19px;
             transition: 0.3s ease-in-out;
+            font-size: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:hover{
                 background-color: rgb(214, 172, 60);
-            }
-            @include mobile{
-                width: 50px;
-                height: 30px;
-                font-size: 10px;
-            }
-            a{
-                color: #fff;
-                font-size: 21px;
-                @include mobile{
-                    font-size: 10px;
-                }
             }
         }
     }
@@ -565,7 +581,7 @@
         }
         @include mobileTablet{
             padding: 4px;
-            width: 150px;
+            width: 130px;
         }
         a{
             color: #A46B04;
@@ -1016,6 +1032,7 @@
             }
             img{
                 transition: 0.3s ease;
+                width: 100%;
             }
         }
         .blog__tittle{
@@ -1056,7 +1073,7 @@
             color: $main-color;
         }
     }
-    .loading{
+    .blogs__load-btn {
         width: 169px;
         height: 57px;
         background-color: #0D1333;
@@ -1064,13 +1081,9 @@
         font-size: 28px;
         color: #E59B16;
         cursor: pointer;
-        a{
-            color: $main-color;
-            font-weight: bold;
-            &:hover{
-                color: $main-color;
-            }
-        }
+        color: $main-color;
+        font-weight: bold;
+        padding: 12px 15px;
         &.opacity {
             opacity: .3;
             pointer-events: none;
@@ -1083,13 +1096,7 @@
             color:#0D1333;
             }
         }
-        @include mobile{
-            font-size: 20px;
-        }
-        @include mobile{
-            width: 135px;
-            height: 40px;
-        }
+        
     }
 }
 // style of modal of blog 

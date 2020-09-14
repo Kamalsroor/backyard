@@ -1,5 +1,5 @@
 <!-- start about us -->
-<div class="aboutUs" id="aboutUs">
+<div data-related="about" class="aboutUs" id="aboutUs">
     <div class="container">
         <h1 class="aboutUs__tittle">ABOUT US</h1>
         <p class="aboutUs__artical">{{ Str::limit(setting()->discover_me_des , $limit = 200, $end = '...') }}</p>

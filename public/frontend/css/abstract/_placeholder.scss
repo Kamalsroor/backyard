@@ -1,13 +1,14 @@
 .fixed-form{
     position: fixed !important;
     top:120px !important;
+    max-height: 500px;
+    overflow-y: auto;
 }
-.header{
+.header {
     position: fixed !important;
     width: 100%;
-    z-index: 2;
     background: #fff;
-    top:0;
+    animation: fixed-navbar .5s ease-in-out 1 forwards;
     #{$end}: 0;
     #{$start}: 0;
     box-shadow: 0 3px 16px 0 rgba(0,0,0,.1);
@@ -32,7 +33,7 @@
 }
 .properties{
     .sale-falter__button{
-button.active{
+        button.active{
             border:none;
             background-color: $main-color;
         }

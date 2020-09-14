@@ -1,5 +1,5 @@
 <!-- start our service  -->
-<div class="ourService" id="ourServices">
+<div data-related="services" class="ourService" id="ourServices">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-12 ourService__carts">
@@ -12,7 +12,7 @@
                             </div>
                             <h4>{{ Str::limit($Service->title , $limit = 20, $end = '...') }}</h4>
                             <p>{{ Str::limit($Service->des , $limit = 150, $end = '...') }}</p>
-                            <button class="ourService__call"><a href="#">Call Us</a></button>
+                            <a class="ourService__call" href="#">Call Us</a>
                         </div>
                         
                     @endforeach
@@ -22,7 +22,9 @@
         <div class="col-lg-5 col-12 content">
             <h1 class="ourService__tittle"> our service</h1>
             <p>{{ Str::limit(setting()->our_service_des , $limit = 200, $end = '...') }}</p>
-                <button class="visitUs"><a href="#contact">Visit Us</a></button>
+                <button class="visitUs">
+                    <a class="visitUs" href="#contact">Visit Us</a>
+                </button>
         </div>
     </div>
 </div>

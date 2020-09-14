@@ -1,5 +1,5 @@
 <!-- start team  -->
-<div class="team" id="testimonial"> 
+<div data-related="team" class="team" id="testimonial"> 
     <div class="container">
         <h1>team</h1>
         <p class="summrize">{{ Str::limit(setting()->team_des , $limit = 200, $end = '...') }}</p>
