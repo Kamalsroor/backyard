@@ -4,12 +4,12 @@
 
             <div class="col-lg-4  col-12">
                 <div class="properties__content">
-                    <div class="properties__content__img" data-video="{{it()->url($Propertys->video)}}">
+                    <div class="properties__content__img" >
                         <div class="layout"></div>
                         <img src="{{it()->url($Propertys->photo)}}">
                         <button class="rental">{{$Propertys->type}}</button>
                         <button class="Feature">{{$Propertys->badge}}</button>
-                        <button type="button" class="video" data-toggle="modal" data-target="#videoModal" data-src="movie.ogg">
+                        <button type="button" class="video" data-video="{{it()->url($Propertys->video)}}" data-toggle="modal" data-target="#videoModal" data-src="movie.ogg">
                             <img src="{{url('frontend')}}/imgs/video-solid.svg">
                         </button>
                         <p><i class="fas fa-map-marker-alt"></i>{{$Propertys->address}}</p>
