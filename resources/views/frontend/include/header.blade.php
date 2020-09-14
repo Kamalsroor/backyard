@@ -10,7 +10,7 @@
                                 <img src="{{it()->url(setting()->logo)}}">
                             </div>
                             <p class="sticky-header__tittle">
-                            The
+                            
                                 @php
                                 $sitename_en = explode(" ",setting()->sitename_en);
                                 @endphp
