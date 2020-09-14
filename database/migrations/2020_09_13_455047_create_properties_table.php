@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -22,12 +23,12 @@ class CreatePropertiesTable extends Migration
             $table->bigInteger('rooms')->nullable();
             $table->bigInteger('wc')->nullable();
             $table->string('space')->nullable();
-            $table->enum('type',['Rental','Sale']);
+            $table->enum('type', ['Rental', 'Sale']);
             $table->bigInteger('place_id')->unsigned()->nullable();
-            $table->foreign('place_id')->references('id')->on('places');
+            // $table->foreign('place_id')->references('id')->on('places');
             $table->string('badge')->nullable();
             $table->string('video')->nullable();
-			$table->timestamps();
+            $table->timestamps();
         });
     }
 
