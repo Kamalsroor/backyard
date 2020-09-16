@@ -1,5 +1,5 @@
 <!-- start properties  -->
-<div class="properties" id="prop">
+<div data-related="properties" class="properties" id="prop">
     <div class="container">
         <h1 class="aboutUs__tittle">properties</h1>
         <p class="aboutUs__artical">{{ Str::limit(setting()->properties_des , $limit = 200, $end = '...') }}</p>

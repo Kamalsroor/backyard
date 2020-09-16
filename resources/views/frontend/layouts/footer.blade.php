@@ -7,32 +7,29 @@
         <div class="container">
             <div class="content">
                 <div class="row">
-                    <div class="col-md-5 col-12">
+                    <div class="col-md-6 col-lg-5 col-12">
                         <div class="footer__summrize">
                             <h4>{{setting()->sitename_en}}</h4>
                             <p class="pragraph">{{setting()->footer_des}}</p>
                             <div class="socialLinks">
-                                <a href="{{setting()->facebook}}"><i class="fab fa-facebook-f"></i></a> 
-                                <a href="{{setting()->instagram}}"> <i class="fab fa-instagram"></i></a>
-                                <a href="{{setting()->linkedin}}"> <i class="fab fa-linkedin-in"></i></a>
-                                {{-- <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>  --}}
-                                {{-- <a href="https://instgram.com"> <i class="fab fa-instagram"></i></a> --}}
-                                {{-- <a href="https://www.linekin.com"> <i class="fab fa-linkedin-in"></i></a>  --}}
+                                <a target="_blank" href="{{setting()->facebook}}"><i class="fab fa-facebook-f"></i></a> 
+                                <a target="_blank" href="{{setting()->instagram}}"> <i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="{{setting()->linkedin}}"> <i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-12">
+                    <div class="col-md-6 col-lg-3 col-12">
                         <div class="footer__quick-links">
                             <h4>Quick Links</h4>
                             <ul>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
                                         <li><a href="#prop"><i class="fa fa-angle-right" aria-hidden="true"></i>Property</a></li>
                                         <li><a href="#blog_section"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>
                                         <li><a href="#contact"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-6">
                                         <li><a href="#aboutUs"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a></li>
                                         <li><a href="#ourServices"><i class="fa fa-angle-right" aria-hidden="true"></i>Service</a></li>
                                         <li><a href="#testimonial"><i class="fa fa-angle-right" aria-hidden="true"></i>Team</a></li>
@@ -41,34 +38,27 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12 col-lg-4">
                             <h4>Recent Properties</h4>
                 
                         @foreach ($Property as $Propertys)
-                            
-                            <div class="recent-properties">
-                                <div class="row">
-                                    <div class="col-lg-4 col-6">
-                                        <div class="recent-properties__img">
-                                            <img src="{{it()->url($Propertys->photo)}}">
-                                        </div>
+                            <div class="recent-properties d-flex">
+                                <div class="recent-properties__img">
+                                    <img src="{{it()->url($Propertys->photo)}}">
+                                </div>
+                                <div class="recent-properties__content">
+                                    <p>{{$Propertys->name}}</p>
+                                    <div class="recent-properties__content__img">
+                                        <i class="far fa-clone"></i>
                                     </div>
-                                    <div class="col-lg-8 col-6">
-                                        <div class="recent-properties__content">
-                                            <p>{{$Propertys->name}}</p>
-                                            <div class="recent-properties__content__img">
-                                                <i class="far fa-clone"></i>
-                                            </div>
-                                            <p>{{$Propertys->space}} m2</p>
-                                        </div>
-                                    </div>
+                                    <p>{{$Propertys->space}} m2</p>
                                 </div>
                             </div>                    
                         @endforeach
                     </div>
                 </div>
             </div>
-            <p class="right-copy">All Right Reservied @ TBY Co. ,, Powerd By <span>Scale Team</span></p>
+            <a href="#" class="right-copy">All Right Reservied @ TBY Co. ,, Powerd By <span>Scale Team</span></a>
         </div>
     </footer>
     <!-- end footer  -->
@@ -107,8 +97,9 @@
                     <span aria-hidden="true">&times;</span>
             </button>
                 <div class="video-modal">
-                    <video controls>
-                        
+                    <video width="320" height="240" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
@@ -144,8 +135,8 @@
     <script src="{{url('frontend')}}/js/vendor/owl.carousel.min.js"></script>
     <script src="{{url('frontend')}}/js/vendor/jquery.validate.js"></script>
     <script src="{{url('frontend')}}/js/vendor/jquery.nicescroll.min.js"></script>
-    <script src="{{url('frontend')}}/js/pages/main.js"></script>
     <script src="{{url('frontend')}}/js/properties/properties.js"></script>
+    <script src="{{url('frontend')}}/js/pages/main.js"></script>
 
     
     <!-- Start scripts -->

@@ -3,6 +3,10 @@
     top:120px !important;
     max-height: 500px;
     overflow-y: auto;
+    @include mobile {
+        top: 90px;
+        max-height: 400px;
+    }
 }
 .header {
     position: fixed !important;

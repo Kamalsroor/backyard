@@ -6,7 +6,7 @@
         <div class="row blog__container">
             
         </div>
-        <a class="blogs__load-btn" href="#">Load More</a>
+        <button type="button" class="blogs__load-btn">Load More</button>
     </div>
 </div>
 <!-- end blog  -->
