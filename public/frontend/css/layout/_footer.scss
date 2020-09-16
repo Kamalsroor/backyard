@@ -7,19 +7,22 @@ footer{
     }
     .content{
         position: relative;
+        padding-bottom: 2rem;
         &::before{
             content: '';
             width: 60%;
             position: absolute;
-            height: 3px;
+            height: 2px;
             left: 17%;
-            bottom: 0px;
+            bottom: 0;
             background-color: #707070;
         }
         .footer__summrize{
+            padding-bottom: 1rem;
             h4{
                 color: $main-color;
                 text-transform: capitalize;
+                font-weight: bold;
             }
             p.pragraph{
                 color: #C4C4CE;
@@ -30,7 +33,7 @@ footer{
                 justify-content: end;
                 transition: 0.3s;
                 a{
-                    margin-right: 7px;
+                    margin-right: 15px;
                     width: 42px;
                     height: 42px;
                     display: flex;
@@ -38,19 +41,21 @@ footer{
                     background: #222222;
                     justify-content: center;
                     text-transform: capitalize;
+                    transition: .5s;
+                    svg {
+                        font-size: 1.5rem;
+                    }
                     &:hover{
                         background: $main-color;
                         color: #fff;
-                    
-                }
+                        transition: .5s;
+                    }
                 }
                 
             }
         }
         .footer__quick-links{
-            @include mobile{
-                padding-top:30px ;
-            }
+            padding-bottom: 1rem;
             h4{
                 color: #C4C4CE;
                 margin-bottom: 20px;
@@ -64,9 +69,7 @@ footer{
                     color: #C4C4CE;
                     text-transform: capitalize;
                     font-weight: bold;
-                    @include tablet{
-                        font-size: 12px;
-                    }
+                    transition: .5s;
                     svg{
                         color: $main-color;
                         margin-right: 8px;
@@ -77,6 +80,10 @@ footer{
                             margin-right: 3px;
                         }
                     }
+                    &:hover {
+                        color: #E59B16;
+                        transition: .5s;
+                    }
                 }
             }
         }
@@ -85,32 +92,45 @@ footer{
             text-transform: capitalize;
             margin-bottom: 25px;
         }
-        .recent-properties__img{
-            width: 95px;
-            height: 95px;
-        }
-        .recent-properties__content{
-            .recent-properties__content__img{
-                width: 17px;
-                height: 20px;
-                margin-bottom: 3px;
-                display: inline-block;
-                svg{
-                    color: $main-color;
+        .recent-properties {
+            padding: 0 0 1rem 0;
+            .recent-properties__img{
+                width: 80px;
+                height: 55px;
+                padding-right: 1rem;
+                img {
+                    width: 100%;
+                    height: 100%;
                 }
             }
-            p{
-                margin: 0;
-                &:nth-child(3){
+            .recent-properties__content{
+                .recent-properties__content__img{
+                    width: 17px;
+                    height: 20px;
+                    margin-bottom: 3px;
                     display: inline-block;
+                    svg{
+                        color: $main-color;
+                    }
+                }
+                p{
+                    color: #fff;
+                    margin: 0;
+                    &:nth-child(3){
+                        display: inline-block;
+                    }
                 }
             }
         }
+        
+        
     }
-    p.right-copy{
+    a.right-copy{
         text-align: center;
         padding-top: 17px;
         margin-bottom: 11px;
+        display: block;
+        color: #C4C4CE;
         span{
             color: $main-color;
         }

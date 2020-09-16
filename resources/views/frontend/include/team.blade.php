@@ -3,10 +3,10 @@
     <div class="container">
         <h1>team</h1>
         <p class="summrize">{{ Str::limit(setting()->team_des , $limit = 200, $end = '...') }}</p>
-        <div class="owl-carousel owl-theme owl-drag owl-loaded row" id="team__carousel">
+        <div class="owl-carousel owl-theme owl-drag owl-loaded" id="team__carousel">
             @foreach ($Team as $Team)
     
-                <div class="col-lg-3">
+                <div>
                     <div class="cart">
                         <div class="img">
                             <img src="{{it()->url($Team->image)}}">
@@ -18,13 +18,13 @@
                             <p><a href="">{{$Team->email}}</a></p>
                             <div class="socialLinks">
                                 @if ($Team->facebook != null)
-                                <a href="{{$Team->facebook}}"><i class="fab fa-facebook-f"></i></a> 
+                                <a target="_blank" href="{{$Team->facebook}}"><i class="fab fa-facebook-f"></i></a> 
                                 @endif
                                 @if ($Team->instgram != null)
-                                <a href="{{$Team->instgram}}"> <i class="fab fa-instagram"></i></a>
+                                <a target="_blank" href="{{$Team->instgram}}"> <i class="fab fa-instagram"></i></a>
                                 @endif
                                 @if ($Team->linkedin != null)
-                                <a href="{{$Team->linkedin}}"> <i class="fab fa-linkedin-in"></i></a> 
+                                <a target="_blank" href="{{$Team->linkedin}}"> <i class="fab fa-linkedin-in"></i></a> 
                                 @endif
                             </div>
                         </div>
