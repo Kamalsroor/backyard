@@ -45,17 +45,17 @@ class PropertiesController extends Controller
             public function store()
             {
               $rules = [
-             'name'=>'required|string',
-             'des'=>'required|string',
+             'name'=>'required|string|max:250',
+             'des'=>'required|string|max:250',
              'photo'=>'required|'.it()->image().'',
-             'rooms'=>'numeric|nullable|sometimes',
-             'wc'=>'numeric|nullable|sometimes',
-             'space'=>'nullable|sometimes|string',
-             'address'=>'nullable|sometimes|string',
+             'rooms'=>'numeric|required|max:250',
+             'wc'=>'numeric|required|max:250',
+             'space'=>'required|string|max:250',
+             'address'=>'required|string|max:250',
              'type'=>'required',
              'place_id'=>'required',
-             'badge'=>'nullable|sometimes|string',
-             'video'=>'nullable|sometimes',
+             'badge'=>'required|string|max:250',
+             'video'=>'required',
 
                    ];
               $data = $this->validate(request(),$rules,[],[
@@ -119,16 +119,16 @@ class PropertiesController extends Controller
             public function update($id)
             {
                 $rules = [
-             'name'=>'required|string',
+             'name'=>'required|string|max:250',
              'des'=>'required|string',
-             'photo'=>'required|'.it()->image().'',
-             'rooms'=>'numeric|nullable|sometimes',
-             'wc'=>'numeric|nullable|sometimes',
-             'space'=>'nullable|sometimes|string',
-             'address'=>'nullable|sometimes|string',
-             'type'=>'required',
+             'photo'=>'nullable|sometimes|'.it()->image().'',
+             'rooms'=>'numeric|required|max:250',
+             'wc'=>'numeric|required|max:250',
+             'space'=>'required|string|max:250',
+             'address'=>'required|string|max:250',
+             'type'=>'required|max:250',
              'place_id'=>'required',
-             'badge'=>'nullable|sometimes|string',
+             'badge'=>'required|string|max:250',
              'video'=>'nullable|sometimes',
 
                          ];

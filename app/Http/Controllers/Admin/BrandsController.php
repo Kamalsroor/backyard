@@ -45,7 +45,7 @@ class BrandsController extends Controller
             public function store()
             {
               $rules = [
-             'name'=>'nullable|sometimes|string',
+             'name'=>'nullable|sometimes|string|max:250',
              'logo'=>'required|'.it()->image().'',
 
                    ];
@@ -98,8 +98,8 @@ class BrandsController extends Controller
             public function update($id)
             {
                 $rules = [
-             'name'=>'nullable|sometimes|string',
-             'logo'=>'required|'.it()->image().'',
+             'name'=>'nullable|sometimes|string|max:250',
+             'logo'=>'nullable|sometimes|'.it()->image().'',
 
                          ];
              $data = $this->validate(request(),$rules,[],[

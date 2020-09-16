@@ -45,7 +45,7 @@ class AboutController extends Controller
             public function store()
             {
               $rules = [
-             'name'=>'required|string',
+             'name'=>'required|string|max:250',
              'des'=>'required|string',
              'photo'=>'required|'.it()->image().'',
 
@@ -100,9 +100,9 @@ class AboutController extends Controller
             public function update($id)
             {
                 $rules = [
-             'name'=>'required|string',
+             'name'=>'required|string|max:250',
              'des'=>'required|string',
-             'photo'=>'required|'.it()->image().'',
+             'photo'=>'nullable|sometimes|'.it()->image().'',
 
                          ];
              $data = $this->validate(request(),$rules,[],[

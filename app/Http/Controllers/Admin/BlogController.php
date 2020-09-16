@@ -46,7 +46,7 @@ class BlogController extends Controller
             {
               $rules = [
              'photo'=>'required|'.it()->image().'',
-             'title'=>'required|string',
+             'title'=>'required|string|max:250',
              'des'=>'required|string',
 
                    ];
@@ -100,8 +100,8 @@ class BlogController extends Controller
             public function update($id)
             {
                 $rules = [
-             'photo'=>'required|'.it()->image().'',
-             'title'=>'required|string',
+             'photo'=>'nullable|sometimes|'.it()->image().'',
+             'title'=>'required|string|max:250',
              'des'=>'required|string',
 
                          ];

@@ -45,7 +45,7 @@ class PlacesController extends Controller
             public function store()
             {
               $rules = [
-             'name'=>'required|string',
+             'name'=>'required|string|max:250',
 
                    ];
               $data = $this->validate(request(),$rules,[],[
@@ -93,7 +93,7 @@ class PlacesController extends Controller
             public function update($id)
             {
                 $rules = [
-             'name'=>'required|string',
+             'name'=>'required|string|max:250',
 
                          ];
              $data = $this->validate(request(),$rules,[],[

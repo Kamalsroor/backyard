@@ -45,13 +45,13 @@ class TeamController extends Controller
             public function store()
             {
               $rules = [
-             'name'=>'required|string',
-             'jop'=>'required|string',
-             'phone'=>'required|string',
-             'email'=>'nullable|sometimes',
-             'facebook'=>'url|nullable|sometimes',
-             'instgram'=>'url|nullable|sometimes',
-             'linkedin'=>'url|nullable|sometimes',
+             'name'=>'required|string|max:250',
+             'jop'=>'required|string|max:250',
+             'phone'=>'required|string|max:12',
+             'email'=>'nullable|sometimes|max:255',
+             'facebook'=>'url|nullable|sometimes|max:255',
+             'instgram'=>'url|nullable|sometimes|max:255',
+             'linkedin'=>'url|nullable|sometimes|max:255',
              'image'=>'required|'.it()->image().'',
 
                    ];
@@ -110,14 +110,14 @@ class TeamController extends Controller
             public function update($id)
             {
                 $rules = [
-             'name'=>'required|string',
-             'jop'=>'required|string',
-             'phone'=>'required|string',
-             'email'=>'nullable|sometimes',
-             'facebook'=>'url|nullable|sometimes',
-             'instgram'=>'url|nullable|sometimes',
-             'linkedin'=>'url|nullable|sometimes',
-             'image'=>'required|'.it()->image().'',
+             'name'=>'required|string|max:255',
+             'jop'=>'required|string|max:255',
+             'phone'=>'required|string|max:12',
+             'email'=>'nullable|sometimes|max:255',
+             'facebook'=>'url|nullable|sometimes|max:255',
+             'instgram'=>'url|nullable|sometimes|max:255',
+             'linkedin'=>'url|nullable|sometimes|max:255',
+             'image'=>'nullable|sometimes|'.it()->image().'',
 
                          ];
              $data = $this->validate(request(),$rules,[],[

@@ -104,6 +104,7 @@
 	<div class="col-md-9">
 		{!! Form::file('video',['class'=>'form-control','placeholder'=>trans('admin.video')]) !!}
 	</div>
+	
 </div> 
 
 
