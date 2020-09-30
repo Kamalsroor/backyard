@@ -97,10 +97,7 @@
                     <span aria-hidden="true">&times;</span>
             </button>
                 <div class="video-modal">
-                    <video width="320" height="240" controls>
-                        <source src="" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    
                 </div>
             </div>
             </div>

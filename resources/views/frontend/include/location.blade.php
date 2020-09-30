@@ -1,8 +1,8 @@
 <!-- start location  -->
 <div data-related="contact" class="location" id="contact">
     <div class="location__map-img">
-        <!-- <iframe src="{{setting()->map}}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe> -->
-        <img src="frontend/imgs/Capture.png">
+        <iframe src="{{setting()->map}}" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <!-- <img src="frontend/imgs/Capture.png"> -->
     </div>
     <div class="location__cart">
         <div class="container">
@@ -19,7 +19,7 @@
                 </a>
             </div>
             <div class="location-address">
-                <a target="_blank" href="https://www.google.com/maps"><span><i class="fas fa-home"></i></span>
+                <a target="_blank" href="http://maps.google.com/?q={{setting()->address}}"><span><i class="fas fa-home"></i></span>
                     {{setting()->address}}
                 </a>
             </div>
@@ -35,8 +35,7 @@
                 @if(!empty(setting()->opening_hours))
                 @php if(!is_array(setting()->opening_hours)) setting()->opening_hours = json_decode(setting()->opening_hours); @endphp
                 @foreach(json_decode(setting()->opening_hours) as $key=> $opening_hour)
-                    <p>Sunday - Tuseday<span>{{$opening_hour->deys}} AM: {{$opening_hour->hours}} PM</span></p>
-                    <p>Friday<span>closed</span></p>
+                    <p>{{$opening_hour->deys}}<span>{{$opening_hour->hours}}</span></p>
                     @endforeach
             @endif
             </div>

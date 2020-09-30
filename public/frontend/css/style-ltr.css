@@ -170,6 +170,10 @@ input {
   outline: 0;
 }
 
+video, source {
+  outline: none;
+}
+
 /*====================
     End base of files
 ====================*/

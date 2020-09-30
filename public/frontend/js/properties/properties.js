@@ -23,6 +23,42 @@ $(document).ready(function () {
             success: function success(html) {
                 $(".sale-filter").html("");
                 $(".sale-filter").append(html);
+                if ($(window).width() < 992) {
+                    console.log($(".properties__carousel"));
+                    $(".properties__carousel").owlCarousel({
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        items: 1,
+                        itemsDesktop: false,
+                        itemsDesktopSmall: false,
+                        itemsTablet: false,
+                        itemsMobile: false,
+                        loop: true,
+                    });
+                } else {
+                    var owl = $(".properties__carousel");
+                    owl.trigger("destroy.owl.carousel");
+                    owl.addClass("off");
+                }
+            
+                $(window).resize(function () {
+                    if ($(window).width() < 992) {
+                        $(".properties__carousel").owlCarousel({
+                            autoplay: true,
+                            autoplayTimeout: 5000,
+                            items: 1,
+                            itemsDesktop: false,
+                            itemsDesktopSmall: false,
+                            itemsTablet: false,
+                            itemsMobile: false,
+                            loop: true,
+                        });
+                    } else {
+                        var owl = $(".properties__carousel");
+                    owl.trigger("destroy.owl.carousel");
+                    owl.addClass("off");
+                    }
+                });
             },
         });
     }
@@ -73,6 +109,42 @@ $(document).ready(function () {
             success: function success(html) {
                 $(".sale-filter").html("");
                 $(".sale-filter").append(html);
+                if ($(window).width() < 992) {
+                    console.log($(".properties__carousel"));
+                    $(".properties__carousel").owlCarousel({
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        items: 1,
+                        itemsDesktop: false,
+                        itemsDesktopSmall: false,
+                        itemsTablet: false,
+                        itemsMobile: false,
+                        loop: true,
+                    });
+                } else {
+                    var owl = $(".properties__carousel");
+                    owl.trigger("destroy.owl.carousel");
+                    owl.addClass("off");
+                }
+            
+                $(window).resize(function () {
+                    if ($(window).width() < 992) {
+                        $(".properties__carousel").owlCarousel({
+                            autoplay: true,
+                            autoplayTimeout: 5000,
+                            items: 1,
+                            itemsDesktop: false,
+                            itemsDesktopSmall: false,
+                            itemsTablet: false,
+                            itemsMobile: false,
+                            loop: true,
+                        });
+                    } else {
+                        var owl = $(".properties__carousel");
+                    owl.trigger("destroy.owl.carousel");
+                    owl.addClass("off");
+                    }
+                });
             },
         });
     });

@@ -178,8 +178,9 @@ $(document).ready(function () {
             method: "get",
             url: "/GetBlogs",
             success: function (data) {
-                if(data.length > 0) {
 
+                if(data.length > 0) {
+                    
                     for (let i = controlItems - 3; i < controlItems; i++) {
                         if (data.length != i) {
                             var element = `<div class="col-md-4 col-12">
@@ -196,10 +197,15 @@ $(document).ready(function () {
                             </div>`;
                             
                             $(".blog__container").append(element);
+                            
+                            
+
                         } else {
                             loadBtn.addClass("opacity");
                         }
+
                     }
+                    
                 }
                 controlItems += 3;
             },
@@ -217,7 +223,15 @@ $(document).ready(function () {
 
 
     $(document).on('click', '.video-btn', function() {
-        // alert(1);
+        var dataVideo = $(this).attr('data-video');
+        var video = `<video width="320" height="240" controls>
+            <source src="${dataVideo}" type="video/mp4">             
+        </video>`;
+        $('.bolg-modal .video-modal').append(video);
+    });
+
+    $(document).on('hidden.bs.modal', '.bolg-modal', function () {
+        $('.bolg-modal video').remove();
     });
 
 
@@ -249,41 +263,7 @@ $(document).ready(function () {
 
 
 
-    if ($(window).width() < 992) {
-        console.log($(".properties__carousel"));
-        $(".properties__carousel").owlCarousel({
-            autoplay: true,
-            autoplayTimeout: 5000,
-            items: 1,
-            itemsDesktop: false,
-            itemsDesktopSmall: false,
-            itemsTablet: false,
-            itemsMobile: false,
-            loop: true,
-        });
-    } else {
-        var owl = $(".properties__carousel");
-        owl.trigger("destroy.owl.carousel");
-        owl.addClass("off");
-    }
 
-    $(window).resize(function () {
-        if ($(window).width() < 992) {
-            $(".properties__carousel").owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 5000,
-                items: 1,
-                itemsDesktop: false,
-                itemsDesktopSmall: false,
-                itemsTablet: false,
-                itemsMobile: false,
-                loop: true,
-            });
-        } else {
-            var owl = $(".properties__carousel");
-        owl.trigger("destroy.owl.carousel");
-        owl.addClass("off");
-        }
-    });
+
 
 });
