@@ -55,7 +55,7 @@ class PropertiesController extends Controller
              'type'=>'required',
              'place_id'=>'required',
              'badge'=>'required|string|max:250',
-             'video'=>'required',
+             'video'=>'nullable|sometimes',
 
                    ];
               $data = $this->validate(request(),$rules,[],[

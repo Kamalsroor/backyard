@@ -148,7 +148,7 @@ class FileUploader extends Controller {
 		if (!empty($ext)) {
 			return 'image|mimes:'.$ext;
 		} else {
-			return 'image|mimes:jpeg,jpg,png,bmp,gif,psd,pdf';
+			return 'image|mimes:jpeg,jpg,png,bmp,gif,psd,pdf,svg';
 		}
 	}
 
