@@ -106,7 +106,7 @@
 <div class="form-group">
     {!! Form::label('type',trans('admin.type'),['class'=>'col-md-3 control-label']) !!}
     <div class="col-md-9">
-{!! Form::select('type',['Rental'=>trans('admin.Rental'),'Sale'=>trans('admin.Sale'),], $properties->type ,['class'=>'form-control','placeholder'=>trans('admin.type')]) !!}
+{!! Form::select('type',['Rental'=>trans('admin.Rental'),'Sale'=>trans('admin.Sale'),'Poth'=>trans('admin.Poth'),], $properties->type ,['class'=>'form-control','placeholder'=>trans('admin.type')]) !!}
     </div>
 </div>
 <br>

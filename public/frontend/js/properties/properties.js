@@ -2,13 +2,13 @@ $(document).ready(function () {
     function doSearch(placeId) {
         var isRental = $(".rental").hasClass("active");
         var isSale = $(".sale").hasClass("active");
-        var all = $(".alll").hasClass("active");
+        var all = $(".poth").hasClass("active");
         var status = null;
-
-        if (all) status = "all";
+        if (all) status = "Poth";
         if (isRental) status = "Rental";
         else if (isSale) status = "Sale";
-
+        
+        console.log(status);
         $.ajax({
             url: "/GetProperties",
             type: "GET",
@@ -67,28 +67,46 @@ $(document).ready(function () {
     $(".properties__button-place").on("click", function () {
         console.log("test");
         var placeId = $(this).data("place-id");
-
-        doSearch(placeId);
+        setTimeout(() => {
+            
+            doSearch(placeId);
+        }, 200);
     });
 
     $(".rental").on("click", function () {
         var placeId = $(".properties__button-place.active").data("place-id");
-
-        doSearch(placeId);
+        setTimeout(() => {
+            
+            doSearch(placeId);
+        }, 200);
+       
     });
 
     $(".sale").on("click", function () {
         var placeId = $(".properties__button-place.active").data("place-id");
 
-        doSearch(placeId);
+         setTimeout(() => {
+            
+            doSearch(placeId);
+        }, 200);
     });
+
+    $(".poth").on("click", function () {
+        var placeId = $(".properties__button-place.active").data("place-id");
+
+         setTimeout(() => {
+            
+            doSearch(placeId);
+        }, 200);
+    });
+    
 
     $(document).on("click", ".a-link", function () {
         event.preventDefault();
         var url = $(this).data("url");
         var isRental = $(".rental").hasClass("active");
         var isSale = $(".sale").hasClass("active");
-        var all = $(".alll").hasClass("active");
+        var all = $(".poth").hasClass("active");
         var status = null;
 
         if (all) status = "all";

@@ -1,3 +1,7 @@
+   @if ($Property->count() > 0)
+       
+
+   
    <div class="owl-carousel owl-theme owl-drag owl-loaded row properties__carousel">
         @foreach ($Property as $Propertys)
         
@@ -66,4 +70,16 @@
             </ul>
         </nav>
     </div>
+    @endif
+
+    @else
+    <div class="col-12">
+        <h2 style="
+            text-align: center;
+            font-size: 43px;
+            font-weight: 800;
+            color: #777;
+        ">Not Found</h2>
+    </div>
+
     @endif

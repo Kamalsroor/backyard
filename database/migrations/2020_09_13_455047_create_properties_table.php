@@ -24,7 +24,7 @@ class CreatePropertiesTable extends Migration
             $table->bigInteger('wc')->nullable();
             $table->string('space')->nullable();
             $table->string('address')->nullable();
-            $table->enum('type', ['Rental', 'Sale']);
+            $table->enum('type', ['Rental', 'Sale', 'Poth']);
             $table->bigInteger('place_id')->unsigned()->nullable();
             // $table->foreign('place_id')->references('id')->on('places');
             $table->string('badge')->nullable();

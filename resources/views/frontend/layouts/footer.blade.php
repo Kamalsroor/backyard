@@ -10,7 +10,7 @@
                     <div class="col-md-6 col-lg-5 col-12">
                         <div class="footer__summrize">
                             <h4>{{setting()->sitename_en}}</h4>
-                            <p class="pragraph">{{setting()->footer_des}}</p>
+                            <p class="pragraph">{{ Str::limit(setting()->footer_des , $limit = 200, $end = '...') }}</p>
                             <div class="socialLinks">
                                 <a target="_blank" href="{{setting()->facebook}}"><i class="fab fa-facebook-f"></i></a> 
                                 <a target="_blank" href="{{setting()->instagram}}"> <i class="fab fa-instagram"></i></a>

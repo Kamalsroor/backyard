@@ -19,11 +19,16 @@
             </div>
             <button class="rental active">Rental</button>
             <button class="sale">Sale</button>
+            <button class="poth">Poth</button>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-4 filter-place d-md-block d-none">
+                <button class="properties__button-place  active " data-place-id="0" data-toggle="tooltip" data-placement="bottom" title="All">
+                    <p class="elpsis">All</p> 
+                    <div id="triangle-right"></div>
+                </button>
                 @foreach ($Place as $Place)
-                    <button class="properties__button-place @if ($loop->first) active @endif" data-place-id="{{$Place->id}}" data-toggle="tooltip" data-placement="bottom" title="{{$Place->name}}">
+                    <button class="properties__button-place " data-place-id="{{$Place->id}}" data-toggle="tooltip" data-placement="bottom" title="{{$Place->name}}">
                         <p class="elpsis">{{$Place->name}}</p> 
                         <div id="triangle-right"></div>
                     </button>
