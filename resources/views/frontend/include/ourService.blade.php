@@ -8,7 +8,8 @@
                     @foreach ($Service as $Service)
                         <div class="ourService__cart">
                             <div class="img">
-                                <i class="fas fa-home"></i>
+                                <img src="{{it()->url($Service->photo)}}">
+                                {{-- <i class="fas fa-home"></i> --}}
                             </div>
                             <h4>{{ Str::limit($Service->title , $limit = 20, $end = '...') }}</h4>
                             <p>{{ Str::limit($Service->des , $limit = 150, $end = '...') }}</p>
