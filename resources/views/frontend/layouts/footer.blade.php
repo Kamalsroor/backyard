@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="right-copy">All Right Reservied @ TBY Co. ,, Powerd By <span>Scale Team</span></a>
+            <div class="right-copy">All Right Reservied @ TBY Co. ,, Powerd By <a href="#">Scale Team</a></div>
         </div>
     </footer>
     <!-- end footer  -->

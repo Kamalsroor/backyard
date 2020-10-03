@@ -19,7 +19,7 @@
             </div>
             <button class="rental active">Rental</button>
             <button class="sale">Sale</button>
-            <button class="poth">Poth</button>
+            <button class="poth">both</button>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-4 filter-place d-md-block d-none">

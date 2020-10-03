@@ -357,9 +357,6 @@ End componant Of Pages
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -755,7 +752,7 @@ footer .content .recent-properties .recent-properties__content p:nth-child(3) {
   display: inline-block;
 }
 
-footer a.right-copy {
+footer div.right-copy {
   text-align: center;
   padding-top: 17px;
   margin-bottom: 11px;
@@ -763,7 +760,7 @@ footer a.right-copy {
   color: #C4C4CE;
 }
 
-footer a.right-copy span {
+footer div.right-copy a {
   color: #A46B04;
 }
 
@@ -884,7 +881,7 @@ footer a.right-copy span {
   right: 70px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  z-index: 2;
+  z-index: 5;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -1126,18 +1123,6 @@ footer a.right-copy span {
   background-image: url("../imgs/home-body-bg.d653e24c.png");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-@media (min-width: 769px) and (max-width: 1365px) {
-  .aboutUs, .properties {
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .aboutUs, .properties {
-    margin-top: 60px;
-  }
 }
 
 .aboutUs .carts__info .img, .properties .carts__info .img {
@@ -1384,19 +1369,7 @@ footer a.right-copy span {
 }
 
 .ourService {
-  margin-top: 150px;
-}
-
-@media (min-width: 769px) and (max-width: 1365px) {
-  .ourService {
-    margin-top: 100px;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .ourService {
-    margin-top: 30px;
-  }
+  margin-top: 65px;
 }
 
 .ourService h1 {
@@ -1482,9 +1455,9 @@ footer a.right-copy span {
   height: 385px;
 }
 
-.ourService .ourService__cart svg {
-  width: 55px;
-  height: 42px;
+.ourService .ourService__cart svg, .ourService .ourService__cart img {
+  width: 50px;
+  height: 52px;
 }
 
 .ourService .ourService__cart h4 {
@@ -1492,7 +1465,7 @@ footer a.right-copy span {
   font-weight: bold;
   margin: 35px 0px 24px 0px;
   margin-bottom: 24px;
-  width: 145px;
+  width: 165px;
   text-align: center;
 }
 
@@ -1501,6 +1474,8 @@ footer a.right-copy span {
   text-align: center;
   margin-bottom: 31px;
   word-break: break-all;
+  max-height: 82px;
+  overflow: hidden;
 }
 
 @media (min-width: 320px) and (max-width: 425px) {
@@ -1559,41 +1534,62 @@ footer a.right-copy span {
   }
 }
 
-.ourService button.visitUs {
-  width: 165px;
+.ourService a.visitUs {
   height: 56px;
   border-radius: 35px;
   background: #000000;
-  outline: none;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  margin-top: 35px;
-}
-
-.ourService button.visitUs:hover {
-  background-color: #fff;
-  border: 1px solid #000;
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  .ourService button.visitUs {
-    padding: 4px;
-    width: 130px;
-  }
-}
-
-.ourService button.visitUs a {
-  color: #A46B04;
+  margin-top: 1.5rem;
+  display: inline-block;
   font-size: 28px;
   font-weight: bold;
-  display: inline-block;
-  width: 100%;
+  padding: .5rem 2rem;
+  overflow: hidden;
+  position: relative;
 }
 
-@media (min-width: 320px) and (max-width: 768px) {
-  .ourService button.visitUs a {
-    font-size: 18px;
-  }
+.ourService a.visitUs::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  background-color: #0D1333;
+  z-index: 1;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.ourService a.visitUs span {
+  color: #A46B04;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.ourService a.visitUs:hover span {
+  color: #fff;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.ourService a.visitUs:hover::after {
+  width: 100%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .properties .properties__carousel {
@@ -2160,7 +2156,7 @@ footer a.right-copy span {
   background: #F9F9F9;
   -webkit-box-shadow: 5px 6px 10px #00000029;
           box-shadow: 5px 6px 10px #00000029;
-  padding-top: 14px;
+  padding: 1rem;
   padding-bottom: 19px;
   margin-bottom: 55px;
   -webkit-transition: 0.5s ease-in-out;
@@ -2330,8 +2326,8 @@ footer a.right-copy span {
 }
 
 .team .cart .img {
-  width: 85px;
-  height: 79px;
+  width: 117px;
+  height: 102px;
   margin: auto;
   position: relative;
   top: 36px;
@@ -2353,7 +2349,7 @@ footer a.right-copy span {
 }
 
 .team .cart .team__info h4, .team .cart .team__info p {
-  word-break: break-all;
+  overflow: hidden;
 }
 
 .team .cart .team__info h4 {
@@ -2420,19 +2416,12 @@ footer a.right-copy span {
 }
 
 .location {
-  margin-top: 2rem;
   position: relative;
 }
 
 .location .location__map-img {
-  height: 508px;
-}
-
-.location .location__map-img img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 550px;
+  min-height: 508px;
 }
 
 .location .location__map-img iframe {
@@ -2442,11 +2431,13 @@ footer a.right-copy span {
 
 .location .location__cart {
   padding: 2rem 0;
-  width: 323px;
-  height: 427px;
+  width: auto;
+  min-height: 427px;
+  max-height: 500px;
+  overflow-y: auto;
   background: #fff;
   position: absolute;
-  top: 58px;
+  top: 1rem;
   left: 168px;
   -webkit-box-shadow: 0px 6px 10px #00000029;
           box-shadow: 0px 6px 10px #00000029;
@@ -2473,12 +2464,11 @@ footer a.right-copy span {
   margin-bottom: 17px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
-  word-break: break-all;
 }
 
 .location .location__cart .phone a, .location .location__cart .email a, .location .location__cart .location-address a {
   font-family: 'Sitka Small';
-  font-size: 1rem;
+  font-size: .8rem;
   color: #0D1333;
   font-weight: bold;
   -webkit-transition: .5s;
@@ -2558,7 +2548,8 @@ footer a.right-copy span {
   color: #A46B04;
 }
 
-.location .location__cart .opening-hours p:nth-child(3) span {
+.location .location__cart .opening-hours p:last-child span {
+  text-transform: capitalize;
   color: #808080;
 }
 
