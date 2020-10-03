@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-xl-3 col-5 sticky-header__logo">
                     <div class="sticky-header__img-title">
-                        <a href="#" class="d-flex align-items-center justify-content-center">
+                        <a href="#" class="d-flex align-items-center justify-content-center justify-content-xl-start">
                             <div class="img d-flex align-items-center">
                                 <img src="{{it()->url(setting()->logo)}}">
                             </div>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-5 phone">
-                    <p class="static-header__phone-num d-flex justify-content-end justify-content-lg-start"><a href="tel:{{setting()->phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{setting()->phone}}</a></p>
+                    <p class="static-header__phone-num d-flex justify-content-end"><a href="tel:{{setting()->phone}}"> <i class="fa fa-phone" aria-hidden="true"></i>{{setting()->phone}}</a></p>
                 </div>
             </div>
         </div>

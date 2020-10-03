@@ -8,6 +8,13 @@ $(document).ready(function () {
     //     cursorborder: "none",
     //     cursorborderradius: 0,
     // });
+    // var setScroll = function(i) {
+    //     if($(i).length>0)
+    //     $(i).niceScroll().updateScrollBar();
+    // } 
+    // setScroll("html");
+
+
     //preload of pages
 
     $(".preload__container").fadeOut(1000, function () {
@@ -54,7 +61,7 @@ $(document).ready(function () {
         autoplay: true,
         autoplayTimeout: 5000,
         items: 1,
-        loop: true,
+        // loop: true,
         nav: false,
         dots: true,
         stagePadding: 0,
@@ -144,6 +151,11 @@ $(document).ready(function () {
             $(".general-to-up").fadeOut();
         }
     });
+    if ($(window).scrollTop() > 100) {
+        $(".general-to-up").fadeIn();
+    } else {
+        $(".general-to-up").fadeOut();
+    }
 
     // form validation
     $('.contact-form').validate({

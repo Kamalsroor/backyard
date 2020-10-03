@@ -17,6 +17,7 @@
             </div>
             <button class="rental active">Rental</button>
             <button class="sale">Sale</button>
+
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-4 filter-place d-md-block d-none">

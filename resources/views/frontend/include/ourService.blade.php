@@ -23,9 +23,9 @@
         <div class="col-lg-5 col-12 content">
             <h1 class="ourService__tittle"> our service</h1>
             <p>{{ Str::limit(setting()->our_service_des , $limit = 200, $end = '...') }}</p>
-                <button class="visitUs">
-                    <a class="visitUs" href="#contact">Visit Us</a>
-                </button>
+            <a class="visitUs" href="#contact">
+                <span>Visit Us</span>
+            </a>
         </div>
     </div>
 </div>

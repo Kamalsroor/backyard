@@ -125,13 +125,13 @@ footer{
         
         
     }
-    a.right-copy{
+    div.right-copy{
         text-align: center;
         padding-top: 17px;
         margin-bottom: 11px;
         display: block;
         color: #C4C4CE;
-        span{
+        a{
             color: $main-color;
         }
     }
