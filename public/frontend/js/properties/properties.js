@@ -1,5 +1,12 @@
 $(document).ready(function () {
     function doSearch(placeId) {
+
+        if ($(window).width() < 767) {
+            placeId = $('#places').val();
+            if(placeId == null || placeId == "")
+                placeId = 0;
+        }
+        
         var isRental = $(".rental").hasClass("active");
         var isSale = $(".sale").hasClass("active");
         var all = $(".poth").hasClass("active");
@@ -75,6 +82,11 @@ $(document).ready(function () {
 
     $(".rental").on("click", function () {
         var placeId = $(".properties__button-place.active").data("place-id");
+        if ($(window).width() < 767) {
+            placeId = $('#places').val();
+            if(placeId == null || placeId == "")
+                placeId = 0;
+        }
         setTimeout(() => {
             
             doSearch(placeId);
@@ -84,15 +96,30 @@ $(document).ready(function () {
 
     $(".sale").on("click", function () {
         var placeId = $(".properties__button-place.active").data("place-id");
-
+        if ($(window).width() < 767) {
+            placeId = $('#places').val();
+            if(placeId == null || placeId == "")
+                placeId = 0;
+        }
          setTimeout(() => {
             
             doSearch(placeId);
         }, 200);
     });
 
-    $(".poth").on("click", function () {
-        var placeId = $(".properties__button-place.active").data("place-id");
+    // $(".poth").on("click", function () {
+    //     var placeId = $(".properties__button-place.active").data("place-id");
+
+    //      setTimeout(() => {
+            
+    //         doSearch(placeId);
+    //     }, 200);
+    // });
+    
+
+    $("#places").on("change", function () {
+        
+        var placeId = $(this).val();
 
          setTimeout(() => {
             

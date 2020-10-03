@@ -5,21 +5,18 @@
         <p class="aboutUs__artical">{{ Str::limit(setting()->properties_des , $limit = 200, $end = '...') }}</p>
         <div class="sale-falter__button">
             <div class="dropdown d-md-none d-block">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    places
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
-                    <a class="dropdown-item" href="#">Lorem Ipsum</a>
+                <div class="form-group">
+                    <label for="places">Text</label>
+                    <select id="places" class="form-control" name="">
+                            <option value="0" selected>All</option>
+                        @foreach ($Place as $Places)
+                            <option value="{{$Places->id}}">{{$Places->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <button class="rental active">Rental</button>
             <button class="sale">Sale</button>
-            <button class="poth">Poth</button>
         </div>
         <div class="row">
             <div class="col-lg-3 col-md-4 filter-place d-md-block d-none">

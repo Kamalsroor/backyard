@@ -35,9 +35,9 @@ class HomeController extends Controller
     public function PropertiesView(Request $request)
     {
         if ($request->place_id == 0) {
-            $Property = Property::where('type', $request->status)->paginate(6);
+            $Property = Property::whereIn('type', [$request->status,'Poth'])->paginate(6);
         }else{
-            $Property = Property::where('type', $request->status)->where('place_id', $request->place_id)->paginate(6);
+            $Property = Property::whereIn('type', [$request->status,'Poth'])->where('place_id', $request->place_id)->paginate(6);
         }
         return view('frontend.include.properties__carousel', ['title' => trans('frontend.product-list'), 'Property' => $Property]);
     }
