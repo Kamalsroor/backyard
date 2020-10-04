@@ -1,18 +1,29 @@
 // sticky form
 $(document).ready(function () {
     // scroll
-    // $("html").niceScroll({
-    //     cursorcolor: "#A46B04",
-    //     cursorwidth: "10px",
-    //     background: "rgba(0,0,0)",
-    //     cursorborder: "none",
-    //     cursorborderradius: 0,
-    // });
-    // var setScroll = function(i) {
-    //     if($(i).length>0)
-    //     $(i).niceScroll().updateScrollBar();
-    // } 
-    // setScroll("html");
+    var body = $('body');
+
+    body.niceScroll({
+        cursorcolor: "#A46B04",
+        cursorwidth: "10px",
+        background: "rgba(0,0,0)",
+        cursorborder: "none",
+        cursorborderradius: 0,
+    });
+
+    function fixNiceScroll() {
+        body.getNiceScroll().remove();
+        body.niceScroll({
+            cursorcolor: "#A46B04",
+            cursorwidth: "10px",
+            background: "rgba(0,0,0)",
+            cursorborder: "none",
+            cursorborderradius: 0,
+        });
+    }
+
+
+
 
 
     //preload of pages
@@ -61,7 +72,7 @@ $(document).ready(function () {
         autoplay: true,
         autoplayTimeout: 5000,
         items: 1,
-        // loop: true,
+        loop: true,
         nav: false,
         dots: true,
         stagePadding: 0,
@@ -210,7 +221,7 @@ $(document).ready(function () {
                             
                             $(".blog__container").append(element);
                             
-                            
+                            fixNiceScroll();
 
                         } else {
                             loadBtn.addClass("opacity");

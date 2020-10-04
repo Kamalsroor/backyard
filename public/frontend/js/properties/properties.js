@@ -78,6 +78,7 @@ $(document).ready(function () {
             
             doSearch(placeId);
         }, 200);
+        fixNiceScroll();
     });
 
     $(".rental").on("click", function () {
@@ -91,7 +92,7 @@ $(document).ready(function () {
             
             doSearch(placeId);
         }, 200);
-       
+        fixNiceScroll();
     });
 
     $(".sale").on("click", function () {
@@ -105,6 +106,7 @@ $(document).ready(function () {
             
             doSearch(placeId);
         }, 200);
+        fixNiceScroll();
     });
 
     // $(".poth").on("click", function () {
@@ -125,6 +127,7 @@ $(document).ready(function () {
             
             doSearch(placeId);
         }, 200);
+        fixNiceScroll();
     });
     
 

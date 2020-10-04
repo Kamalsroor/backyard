@@ -2503,6 +2503,10 @@ footer div.right-copy a {
   color: #A46B04;
 }
 
+.location .location__cart .location-address {
+  max-width: 300px;
+}
+
 .location .location__cart .location-address a {
   font-size: 15px;
 }

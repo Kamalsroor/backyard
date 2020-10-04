@@ -42,7 +42,7 @@
                             <h4>Recent Properties</h4>
                 
                         @foreach ($Property as $Propertys)
-                            <div class="recent-properties d-flex">
+                            <a href="#" class="recent-properties d-flex">
                                 <div class="recent-properties__img">
                                     <img src="{{it()->url($Propertys->photo)}}">
                                 </div>
@@ -53,7 +53,7 @@
                                     </div>
                                     <p>{{$Propertys->space}} m2</p>
                                 </div>
-                            </div>                    
+                            </a>                    
                         @endforeach
                     </div>
                 </div>
